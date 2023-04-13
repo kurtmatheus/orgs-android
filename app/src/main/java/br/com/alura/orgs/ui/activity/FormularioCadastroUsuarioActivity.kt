@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import br.com.alura.orgs.database.AppDatabase
 import br.com.alura.orgs.databinding.ActivityFormularioCadastroUsuarioBinding
+import br.com.alura.orgs.extensions.toast
 import br.com.alura.orgs.model.Usuario
 import kotlinx.coroutines.launch
 
@@ -31,19 +32,11 @@ class FormularioCadastroUsuarioActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 try {
                     dao.salva(novoUsuario)
-                    Toast.makeText(
-                        this@FormularioCadastroUsuarioActivity,
-                        "Usuario Cadastrado com Sucesso.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    toast("Usuario Cadastrado com Sucesso.")
                     finish()
                 } catch (e: Exception) {
                     Log.e("CadastrarUsuario", "configuraBotaoCadastrar: Cadastrar", e)
-                    Toast.makeText(
-                        this@FormularioCadastroUsuarioActivity,
-                        "Falha ao Cadastrar Usuário.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    toast("Falha ao Cadastrar Usuário.")
                 }
             }
         }
@@ -56,3 +49,4 @@ class FormularioCadastroUsuarioActivity : AppCompatActivity() {
         return Usuario(usuario, nome, senha)
     }
 }
+
