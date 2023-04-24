@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orgs">
+        <activity android:name=".ui.activity.TodosProdutosActivity"
+            android:label="Produtos Cadastrados" />
         <activity android:name=".ui.activity.PerfilUsuarioActivity"
             android:label="Perfil do Usuário"/>
         <activity
