@@ -54,6 +54,9 @@ class ListaProdutosActivity : UsuarioBaseActivity() {
             R.id.menu_lista_produto_perfil_usuario -> {
                 vaiPara(PerfilUsuarioActivity::class.java)
             }
+            R.id.menu_lista_produtos_todos_produtos -> {
+                vaiPara(TodosProdutosActivity::class.java)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
